@@ -11,8 +11,20 @@ navToggle.addEventListener("click", () => {
   navToggle
 });
 
-// Carousel
-const swiper = new Swiper('.swiper', {
+// Show carousel
+const showSwiper = new Swiper('.showSwiper', {
+  slidesPerView: 5,
+  spaceBetween: 40,
+  centeredSlides: true,
+  loop: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  }
+});
+
+// Feedback Carousel
+const feedbackSwiper = new Swiper('.feedbackSwiper', {
   pagination: {
     el: ".swiper-pagination",
     clickable: true,

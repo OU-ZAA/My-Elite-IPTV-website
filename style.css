@@ -1,4 +1,5 @@
 :root {
+  --clr-accent-900: hsl(221, 38%, 18%);
   --clr-accent-400:   hsl(217, 100%, 61%);
   --clr-accent-300: hsl(217, 100%, 75%);
   --clr-accent-200: hsl(209, 100%, 82%);
@@ -166,7 +167,7 @@ body {
 /* navigation */
 
 .primary-header {
-  padding-top: var(--size-700);
+  padding-block: var(--size-300);
 }
 
 .nav-wrapper {
@@ -240,7 +241,8 @@ body {
 
 /* Hero */
 .hero {
-  background-image: url(images/bg-image.jpg);
+  height: 100vh;
+  background-image: url(images/ball.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -261,8 +263,16 @@ body {
   color: var(--clr-neutral-100);
 }
 
+/* Show carousel */
+
+.swiper-button-prev,
+.swiper-button-next {
+  background: transparent;
+  border: none;
+}
+
 /* Carousel */
-.swiper {
+.feedbackSwiper {
   height: 300px;
   box-shadow: none;
 }
@@ -277,6 +287,9 @@ body {
 }
 
 /* Pricing */
+.cta {
+  background-color: var(--clr-accent-900);
+}
 .pricing-wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
