@@ -24,20 +24,26 @@ const swiper = new Swiper('.swiper', {
 });
 
 // Accordion
-const accs = document.querySelectorAll(".accordion");
-
-accs.forEach( (acc) => {
-  acc.addEventListener("click", function() {
-    /* Toggle between adding and removing the "active" class,
-    to highlight the button that controls the panel */
-    this.classList.toggle("active");
-
-    /* Toggle between hiding and showing the active panel */
-    const panel = this.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    }
-  });
+const accordion = new Accordion('.accordion-container', {
+  // animation duration in ms {number} 
+  duration: 600, 
+  // add ARIA elements to the HTML structure {boolean}
+  ariaEnabled: true, 
+  // allow collapse expanded panel {boolean}
+  collapse: true, 
+  // show multiple elements at the same time {boolean}
+  showMultiple: false, 
+  // disabling this option will find all items in the container {boolean}
+  onlyChildNodes: true, 
+  // show accordion elements during initialization {array}
+  openOnInit: [], 
+  // element class {string}
+  elementClass: 'ac', 
+  // trigger class {string}
+  triggerClass: 'ac-trigger', 
+  // panel class {string}
+  panelClass: 'ac-panel', 
+  // active element class {string}
+  activeClass: 'is-active'
+  
 });
