@@ -127,8 +127,7 @@ body {
 }
 
 .logo {
-  width: 146px;
-  height: 24;
+  width: 100px;
 }
 
 /* button */
@@ -245,23 +244,51 @@ body {
   background-image: url(images/ball.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+}
+
+.bg-clr {
+  background: linear-gradient(to right, #010C3A 0%, rgba(255,255,255,0) 100%);
+  position: absolute;
+  inset: 0;
 }
 
 .hero-title {
-  margin-block-start: 8rem;
-  padding-inline-end: 20rem;
+  margin-top: 30vh;
+  margin-right: 20vw;
+  animation-name: slideIn;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
 }
 
 .hero-subtitle {
-  font-size: var(--fs-700);
-  max-width: 30ch;
-  padding-inline: var(--size-600);
+  font-size: var(--size-400);
+  max-width: 50ch;
 }
 
 .hero-title,
 .hero-subtitle {
   text-shadow:  0px 0px 40px rgb(0 0 0 );
   color: var(--clr-neutral-100);
+  transform: translateX(100%);
+	opacity: 0;
+	animation: slide-in 3s ease-out forwards;
+}
+
+@keyframes slide-in {
+	20% {
+		opacity: 0;
+	}
+	60% {
+		transform: translateX(2%);
+	}
+	75% {
+		transform: translateX(-2%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0%);
+	}
 }
 
 /* Show carousel */
@@ -370,11 +397,23 @@ body {
 
 .pricing-item-price {
   position: relative;
+  width: fit-content;
+  margin-inline: auto;
 }
 
-.pricing-item-price span {
+.pricing-item-price::before {
+  content: "€";
+  font-size: 20px;
   position: absolute;
-  top: 0;
+  top: 10%;
+  left: -20%;
+}
+.pricing-item-price::after {
+  content: "99";
+  font-size: 20px;
+  position: absolute;
+  top: 10%;
+  right: -30%;
 }
 
 .pricing-item-list {
@@ -392,6 +431,101 @@ body {
 .fa-check {
   color: #06d6a0;
   margin-inline-end: var(--size-200);
+}
+
+.blob-btn {
+  z-index: 1;
+  position: relative;
+  padding: 20px 46px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #0505a9;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  transition: color 0.5s;
+  cursor: pointer;
+  border-radius: 30px;
+}
+.blob-btn:before {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #0505a9;
+  border-radius: 30px;
+}
+.blob-btn:after {
+  content: "";
+  z-index: -2;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s 0.2s;
+  border-radius: 30px;
+}
+.blob-btn:hover {
+  color: #fff;
+  border-radius: 30px;
+}
+.blob-btn:hover:after {
+  transition: all 0.3s;
+  left: 0;
+  top: 0;
+  border-radius: 30px;
+}
+.blob-btn__inner {
+  z-index: -1;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  background: #fff;
+}
+.blob-btn__blobs {
+  position: relative;
+  display: block;
+  height: 100%;
+  filter: url('#goo');
+}
+.blob-btn__blob {
+  position: absolute;
+  top: 2px;
+  width: 25%;
+  height: 100%;
+  background: #0505a9;
+  border-radius: 100%;
+  transform: translate3d(0, 150%, 0) scale(1.7);
+  transition: transform 0.45s;
+}
+.blob-btn__blob:nth-child(1) {
+  left: 0%;
+  transition-delay: 0s;
+}
+.blob-btn__blob:nth-child(2) {
+  left: 30%;
+  transition-delay: 0.08s;
+}
+.blob-btn__blob:nth-child(3) {
+  left: 60%;
+  transition-delay: 0.16s;
+}
+.blob-btn__blob:nth-child(4) {
+  left: 90%;
+  transition-delay: 0.24s;
+}
+.blob-btn:hover .blob-btn__blob {
+  transform: translateZ(0) scale(1.7);
 }
 
 /* Utility classes */
@@ -514,6 +648,9 @@ body {
 }
 .padding-block-700 {
   padding-block: var(--size-700);
+}
+.padding-block-400 {
+  padding-block: var(--size-400);
 }
 
 .margin-bottom-400 {
