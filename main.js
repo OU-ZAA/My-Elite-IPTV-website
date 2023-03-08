@@ -13,10 +13,32 @@ navToggle.addEventListener("click", () => {
 
 // Show carousel
 const showSwiper = new Swiper('.showSwiper', {
-  slidesPerView: 5,
-  spaceBetween: 40,
-  centeredSlides: true,
+  slidesPerView: 1,
+  spaceBetween: 10,
   loop: true,
+  // Responsive breakpoints
+  breakpoints: {
+    // when window width is >= 320px
+    "@0.75": {
+      slidesPerView: 2,
+      spaceBetween: 20
+    },
+    // when window width is >= 480px
+    "@1": {
+      slidesPerView: 4,
+      spaceBetween: 30
+    },
+    // when window width is >= 800
+    "@1.5": {
+      slidesPerView: 5,
+      spaceBetween: 30
+    },
+    // when window width is >= 640px
+    "@2": {
+      slidesPerView: 6,
+      spaceBetween: 30
+    }
+  },
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -25,6 +47,7 @@ const showSwiper = new Swiper('.showSwiper', {
 
 // Feedback Carousel
 const feedbackSwiper = new Swiper('.feedbackSwiper', {
+  loop: true,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
