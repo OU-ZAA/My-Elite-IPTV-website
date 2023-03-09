@@ -16,6 +16,7 @@ const showSwiper = new Swiper('.showSwiper', {
   slidesPerView: 1,
   spaceBetween: 10,
   loop: true,
+  speed: 300,
   // Responsive breakpoints
   breakpoints: {
     // when window width is >= 320px
@@ -48,10 +49,6 @@ const showSwiper = new Swiper('.showSwiper', {
 // Feedback Carousel
 const feedbackSwiper = new Swiper('.feedbackSwiper', {
   loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",

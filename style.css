@@ -331,6 +331,32 @@ body {
   color: var(--clr-accent-400);
 }
 
+.details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.year {
+  color: var(--clr-accent-400);
+}
+
+.comments,
+.rate {
+  color: var(--clr-neutral-100);
+  margin-inline-start: 20px;
+}
+
+.rate::before {
+  content: '\2605';
+  font-size: 13px;
+  margin-inline-end: 7px;
+  color: #ddc76d;
+}
+
+.comments::before {
+  content: '\f27a';
+}
+
 .swiper-button-prev,
 .swiper-button-next {
   background: transparent;
@@ -339,17 +365,15 @@ body {
 
 /* Carousel */
 .feedbackSwiper {
-  height: 300px;
+  height: fit-content;
   box-shadow: none;
 }
 
 .slider-content {
-  width: 40ch;
-  font-size: var(--fs-800);
-  line-height: 1.2;
-  font-family: 'Italianno', cursive;
-  letter-spacing: 0px;
+  font-size: 1.5rem;
   margin-inline: auto;
+  margin-block: var(--size-500);
+  width: 80%;
 }
 
 /* Pricing */
