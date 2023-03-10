@@ -94,6 +94,10 @@ a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Make images easier to work with */
 img,
 picture,
@@ -241,7 +245,7 @@ body {
 /* Hero */
 .hero {
   height: 100vh;
-  background-image: url(images/ball.jpg);
+  background-image: url(images/pexels-riccardo-41257.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -302,6 +306,11 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
+  transition: all .5s ease;
+}
+
+.photo:hover .show-cover {
+  transform: scale(1.05);
 }
 
 .show-swiper-wrapper {
@@ -348,19 +357,52 @@ body {
 
 .rate::before {
   content: '\2605';
-  font-size: 13px;
-  margin-inline-end: 7px;
-  color: #ddc76d;
 }
 
 .comments::before {
   content: '\f27a';
 }
 
+.rate::before,
+.comments::before {
+  font-size: 13px;
+  margin-inline-end: 7px;
+  color: #ddc76d;
+}
+
+.swiper-button-next {
+  right:30px;
+}
+
+.swiper-button-prev {
+  left: 30px;
+}
+
 .swiper-button-prev,
 .swiper-button-next {
-  background: transparent;
   border: none;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 100%;
+  padding: 30px;
+  color: #fff !important;
+  fill: white !important;
+  stroke: white !important;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: var(--size-500) !important;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  color: #000 !important;
+  fill: black !important;
+  stroke: black !important;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 /* Carousel */
@@ -440,6 +482,18 @@ body {
   right: -30%;
 }
 
+.most-popular {
+  position: relative;
+}
+
+.popularity-banner {
+  width: 100px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
 .pricing-item-list {
   padding: 2rem 1rem;
   text-align: left;
@@ -460,7 +514,7 @@ body {
 .blob-btn {
   z-index: 1;
   position: relative;
-  padding: 20px 46px;
+  padding: 16px 30px;
   text-align: center;
   text-transform: uppercase;
   color: #0505a9;

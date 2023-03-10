@@ -16,7 +16,7 @@ const showSwiper = new Swiper('.showSwiper', {
   slidesPerView: 1,
   spaceBetween: 10,
   loop: true,
-  speed: 300,
+  speed: 1000,
   // Responsive breakpoints
   breakpoints: {
     // when window width is >= 320px
@@ -43,16 +43,19 @@ const showSwiper = new Swiper('.showSwiper', {
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
-  }
+  },
+  autoplay: {
+    delay: 5000,
+  },
 });
 
 // Feedback Carousel
 const feedbackSwiper = new Swiper('.feedbackSwiper', {
   loop: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+  speed: 1000,
+  autoplay: {
+    delay: 5000
+  }
 });
 
 // Accordion
