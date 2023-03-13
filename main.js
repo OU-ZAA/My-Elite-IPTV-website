@@ -45,7 +45,7 @@ const showSwiper = new Swiper('.showSwiper', {
     prevEl: ".swiper-button-prev",
   },
   autoplay: {
-    delay: 5000,
+    delay: 2000,
   },
 });
 

@@ -467,19 +467,11 @@ body {
   margin-inline: auto;
 }
 
-.pricing-item-price::before {
-  content: "€";
+.euro {
   font-size: 20px;
   position: absolute;
-  top: 10%;
-  left: -20%;
-}
-.pricing-item-price::after {
-  content: "99";
-  font-size: 20px;
-  position: absolute;
-  top: 10%;
-  right: -30%;
+  top: 12px;
+  left: -20px;
 }
 
 .most-popular {
